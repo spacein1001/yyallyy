@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('760a53b0f93480eb6091cf37df52e31e');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '얄리',
+        description: 'insta:yyallyy',
+        imageUrl:
+          'data:image/jpeg;base64,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',
+        link: {
+          mobileWebUrl: 'https://www.ilbe.com/',
+          webUrl: 'https://www.ilbe.com/',
+        },
+      },
+      social: {
+        likeCount: 77777, //99999가 최대입니다
+        commentCount: 77777, //99999가 최대입니다
+        sharedCount: 77777, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: 'ㄱㄱ?',
+          link: {
+            mobileWebUrl: 'https://www.ilbe.com/',
+            webUrl: 'https://www.ilbe.com/',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
